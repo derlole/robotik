@@ -1,27 +1,30 @@
 # Robotik
 
-Dieses rop soll zur kolaborativen editierbarkeit für unseren Studiengang dienen, bitte löscht keine dateien, welche nicht von euch erstellt sind und sprecht mögliche größere änderungen mit anderen ab.
+Dieses repo soll zur kollaborativen Editierbarkeit für unseren Studiengang dienen, bitte löscht keine Dateien, welche nicht von euch erstellt sind und sprecht mögliche größere Änderungen mit anderen ab.
 
 # Rules
 
-## Allgemien
-Es werden ausschließlich Studienbezogene Inhalte hochgeladen oder Inhalte welche für den gesamten Studiengang von relevanz sind.
-Wenn ihr nett seid pushed ihr nicht alle 5 Minuten ein zeile code, sondern erst, wenn ihr entprechende änderungen habt und Informiert anschliesend eure Studi kollegen :)
+## Allgemein
+Es werden ausschließlich studienbezogene Inhalte hochgeladen oder Inhalte welche für den gesamten Studiengang von Relevanz sind.
+Wenn ihr nett seid, pushed ihr nicht alle 5 Minuten ein Zeile code, sondern erst, wenn ihr entsprechende Änderungen habt und informiert anschließend eure Studi-kollegen :)
 
 ## Editing 
-Editiert werden nur eigene dateien oder unter Absprache mit dem Nutzer, der die Datei erstellt hat.
-Ordner und dateien enthalten keine Leerzeichen!!
-Wenn in einem Ordner eine README.md mit dem inhalt : DELETE ME AFTER INSERTING SOME FILES steht muss dieses gelöscht werden, soblad ihr dateien dort hochladet. diese Dateien sind nur dafür da, dass jeder die Ordner sieht, auch wenn sie leer sind.
+Editiert werden nur eigene Dateien oder unter Absprache mit dem Nutzer, der die Datei erstellt hat.
+Ordner und Dateien enthalten keine Leerzeichen!!
+Wenn in einem Ordner eine README.md mit dem Inhalt : DELETE ME AFTER INSERTING SOME FILES steht muss dieses gelöscht werden, sobald ihr Dateien dort hochladet. diese Dateien sind nur dafür da, dass jeder die Ordner sieht, auch wenn sie leer sind.
 
-## Upload-restrictions
-Es dürfen keine dateien oder Ordner hochgeladen werden, welche als bibliotheken für andere Files gedacht sind, diese sind in der regel durch das gitignore file schon ausgeshclossen, allerdings ist das nicht garantiert. Darunter fallen z.B. die lib und lib64 ordner in einem Python-venv oder node-modules
-Es werden auch keine "Projekte" direkt in dem repo erstellt und keine abhängigkeiten installiert, sondern ausschlieslich dateien hochgeladen, damit sich die größe des repos insgesamt in Grenzen hält.
+## Upload-Restriktion
+Es dürfen keine Dateien oder Ordner hochgeladen werden, welche als Bibliotheken für andere Files gedacht sind, diese sind in der Regel durch das gitignore file schon ausgeschlossen, allerdings ist das nicht garantiert. Darunter fallen z.B. die lib und lib64 Ordner in einem Python-venv oder node-modules
+Es werden auch keine "Projekte" direkt in dem repo erstellt und keine Abhängigkeiten installiert, sondern ausschließlich Dateien hochgeladen, damit sich die Größe des repos insgesamt in Grenzen hält.
 
 ## Changelog
-Es wird jede Änderung mit einer sinnvollen Comit nachricht versehen und große änderung in Folgendem Changelog festgehalten, die Systematik ist selbsterklärend.
-Ein neuer Change wird überhalt eingetragen
+Es wird jede Änderung mit einer sinnvollen Commitnachricht versehen und große Änderung in Folgendem Changelog festgehalten, die Systematik ist selbsterklärend.
+Ein neuer Change wird überhalb eingetragen
 
 # Changelog
 
-### 20-05-2025 Initial Comit mit default Ordnerstrucktur Fülldateien (Benjamin)
-In diesem Comit habe ich eine default Ordnerstrucktur zur übersichtlichkeit erstellt und unter den SE1 und SE2 die module hinzugefügt mit den default README.md
+### 20-05-2025 Rechtschreibverbeserung des katastrophalen ReadMes von Benjamin (Linus)
+
+### 20-05-2025 Initial Commit mit default Ordnerstruktur Fülldateien (Benjamin)
+In diesem Commit habe ich eine default Ordnerstruktur zur Übersichtlichkeit erstellt und unter den SE1 und SE2 die module hinzugefügt mit den default README.md
+
