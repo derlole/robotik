@@ -15,6 +15,7 @@ Wenn in einem Ordner eine README.md mit dem inhalt : DELETE ME AFTER INSERTING S
 
 ## Upload-restrictions
 Es dürfen keine dateien oder Ordner hochgeladen werden, welche als bibliotheken für andere Files gedacht sind, diese sind in der regel durch das gitignore file schon ausgeshclossen, allerdings ist das nicht garantiert. Darunter fallen z.B. die lib und lib64 ordner in einem Python-venv oder node-modules
+Es werden auch keine "Projekte" direkt in dem repo erstellt und keine abhängigkeiten installiert, sondern ausschlieslich dateien hochgeladen, damit sich die größe des repos insgesamt in Grenzen hält.
 
 ## Changelog
 Es wird jede Änderung mit einer sinnvollen Comit nachricht versehen und große änderung in Folgendem Changelog festgehalten, die Systematik ist selbsterklärend.
