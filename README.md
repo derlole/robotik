@@ -23,5 +23,5 @@ Ein neuer Change wird überhalt eingetragen
 
 # Changelog
 
-### 20-05-2025 Initial Comit mit default Ordnerstrucktur Fülldateien (derlole)
+### 20-05-2025 Initial Comit mit default Ordnerstrucktur Fülldateien (Benjamin)
 In diesem Comit habe ich eine default Ordnerstrucktur zur übersichtlichkeit erstellt und unter den SE1 und SE2 die module hinzugefügt mit den default README.md
