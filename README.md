@@ -23,6 +23,8 @@ Ein neuer Change wird überhalb eingetragen
 
 # Changelog
 
+### 20-05-2025 Einfügen der einzelnen Formelsammlungsordner (Linus)
+
 ### 20-05-2025 Rechtschreibverbeserung des katastrophalen ReadMes von Benjamin (Linus)
 
 ### 20-05-2025 Initial Commit mit default Ordnerstruktur Fülldateien (Benjamin)
