@@ -23,6 +23,8 @@ Ein neuer Change wird überhalb eingetragen
 
 # Changelog
 
+### 21-05-2025 pythonstyle tex-library (Benjamin)
+
 ### 20-05-2025 Einfügen der einzelnen Formelsammlungsordner (Linus)
 
 ### 20-05-2025 Rechtschreibverbeserung des katastrophalen ReadMes von Benjamin (Linus)
