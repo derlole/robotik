@@ -1,6 +1,8 @@
 # Das File 'pythonstyle.sty' ist eine LaTex datei, welche als bibliothek in einem LaTex Dokument eingebunden weden kann um python code schön darzusstelen mit folgender zeile wird es eingebunden
  ```latex 
- \usepackage{pythonstyle} 
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{pythonstyle}
  ```
 
 # genutzt werden kann es z.B. folgendermasen
