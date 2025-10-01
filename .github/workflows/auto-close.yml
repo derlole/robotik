@@ -1,0 +1,101 @@
+name: Move overdue issues to Done
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # täglich um Mitternacht UTC
+  workflow_dispatch: # optional: manuell starten
+
+jobs:
+  update-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update overdue issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const projectNumber = 1; // deine Projektnummer (in der URL: /projects/<number>)
+            const owner = context.repo.owner;
+
+            // Hole Projekt-Infos (inkl. Felder)
+            const queryProject = `
+              query($owner:String!, $projectNumber:Int!) {
+                organization(login:$owner) {
+                  projectV2(number:$projectNumber) {
+                    id
+                    fields(first:20) {
+                      nodes {
+                        ... on ProjectV2FieldCommon {
+                          id
+                          name
+                        }
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          name
+                          options { id name }
+                        }
+                      }
+                    }
+                    items(first:100) {
+                      nodes {
+                        id
+                        fieldValues(first:10) {
+                          nodes {
+                            ... on ProjectV2ItemFieldDateValue {
+                              field { ... on ProjectV2FieldCommon { id name } }
+                              date
+                            }
+                            ... on ProjectV2ItemFieldSingleSelectValue {
+                              field { ... on ProjectV2FieldCommon { id name } }
+                              option { id name }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }`;
+
+            const projectData = await github.graphql(queryProject, {
+              owner,
+              projectNumber
+            });
+
+            const project = projectData.organization.projectV2;
+            const endDateField = project.fields.nodes.find(f => f.name === "End Date");
+            const statusField = project.fields.nodes.find(f => f.name === "Status");
+            const doneOption = statusField.options.find(o => o.name === "Done");
+
+            const today = new Date().toISOString().split("T")[0];
+
+            for (const item of project.items.nodes) {
+              const endDateValue = item.fieldValues.nodes.find(
+                v => v.field?.name === "End Date"
+              );
+              const statusValue = item.fieldValues.nodes.find(
+                v => v.field?.name === "Status"
+              );
+
+              if (endDateValue?.date && endDateValue.date < today) {
+                if (statusValue?.option?.name !== "Done") {
+                  console.log(`Setze Item ${item.id} auf Done`);
+                  await github.graphql(`
+                    mutation($projectId:ID!, $itemId:ID!, $fieldId:ID!, $optionId:String!) {
+                      updateProjectV2ItemFieldValue(input:{
+                        projectId:$projectId,
+                        itemId:$itemId,
+                        fieldId:$fieldId,
+                        value:{ singleSelectOptionId:$optionId }
+                      }) {
+                        projectV2Item { id }
+                      }
+                    }
+                  `, {
+                    projectId: project.id,
+                    itemId: item.id,
+                    fieldId: statusField.id,
+                    optionId: doneOption.id
+                  });
+                }
+              }
+            }
