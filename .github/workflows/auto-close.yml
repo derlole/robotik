@@ -19,7 +19,7 @@ jobs:
             // Hole Projekt-Infos (inkl. Felder)
             const queryProject = `
               query($owner:String!, $projectNumber:Int!) {
-                organization(login:$owner) {
+                user(login:$owner) {
                   projectV2(number:$projectNumber) {
                     id
                     fields(first:20) {
