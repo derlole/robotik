@@ -57,7 +57,7 @@ jobs:
               projectNumber
             });
 
-            const project = projectData.organization.projectV2;
+            const project = projectData.user.projectV2;
             const endDateField = project.fields.nodes.find(f => f.name === "End Date");
             const statusField = project.fields.nodes.find(f => f.name === "Status");
             const doneOption = statusField.options.find(o => o.name === "Done");
