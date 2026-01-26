@@ -78,10 +78,10 @@ jobs:
               return;
             }
             
-            const doneOption = statusField.options.find(o => o.name === "Done");
+            const doneOption = statusField.options.find(o => o.name === "Terminated");
             
             if (!doneOption) {
-              console.error("Done option not found. Available options:", statusField.options.map(o => o.name));
+              console.error("Terminated option not found. Available options:", statusField.options.map(o => o.name));
               return;
             }
 
@@ -96,8 +96,8 @@ jobs:
               );
 
               if (endDateValue?.date && endDateValue.date < today) {
-                if (statusValue?.name !== "Done") {
-                  console.log(`Setze Item ${item.id} auf Done`);
+                if (statusValue?.name !== "Terminated") {
+                  console.log(`Setze Item ${item.id} auf Terminated`);
                   await github.graphql(`
                     mutation($projectId:ID!, $itemId:ID!, $fieldId:ID!, $optionId:String!) {
                       updateProjectV2ItemFieldValue(input:{
