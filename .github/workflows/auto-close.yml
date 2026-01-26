@@ -5,13 +5,13 @@ on:
     - cron: "0 0 * * *" # täglich um Mitternacht UTC
   workflow_dispatch: # optional: manuell starten
 
-permissions:
-  contents: read
-  repository-projects: write
-
 jobs:
   update-project:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
     steps:
       - name: Update overdue issues
         uses: actions/github-script@v7
