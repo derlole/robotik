@@ -65,7 +65,25 @@ jobs:
             const project = projectData.user.projectV2;
             const endDateField = project.fields.nodes.find(f => f.name === "End Date");
             const statusField = project.fields.nodes.find(f => f.name === "Status");
+            
+            console.log("Available fields:", project.fields.nodes.map(f => ({ name: f.name, options: f.options?.map(o => o.name) })));
+            
+            if (!statusField) {
+              console.error("Status field not found!");
+              return;
+            }
+            
+            if (!statusField.options) {
+              console.error("Status field has no options!");
+              return;
+            }
+            
             const doneOption = statusField.options.find(o => o.name === "Done");
+            
+            if (!doneOption) {
+              console.error("Done option not found. Available options:", statusField.options.map(o => o.name));
+              return;
+            }
 
             const today = new Date().toISOString().split("T")[0];
 
