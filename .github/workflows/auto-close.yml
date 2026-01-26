@@ -5,6 +5,10 @@ on:
     - cron: "0 0 * * *" # täglich um Mitternacht UTC
   workflow_dispatch: # optional: manuell starten
 
+permissions:
+  contents: read
+  repository-projects: write
+
 jobs:
   update-project:
     runs-on: ubuntu-latest
