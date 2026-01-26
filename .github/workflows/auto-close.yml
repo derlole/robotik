@@ -78,7 +78,7 @@ jobs:
               );
 
               if (endDateValue?.date && endDateValue.date < today) {
-                if (statusValue?.option?.name !== "Done") {
+                if (statusValue?.name !== "Done") {
                   console.log(`Setze Item ${item.id} auf Done`);
                   await github.graphql(`
                     mutation($projectId:ID!, $itemId:ID!, $fieldId:ID!, $optionId:String!) {
